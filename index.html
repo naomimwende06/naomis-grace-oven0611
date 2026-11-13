@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Naomi's Grace Oven | Cakes & Pastries</title>
+
+    <meta name="description" content="Naomi's Grace Oven offers beautiful birthday cakes, wedding cakes, cupcakes and freshly baked treats in Kenya. Order on WhatsApp.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #FFF7E8;
+            color: #4B2E5D;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #4B2E5D;
+            color: #FFF7E8;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .brand-mark {
+            font-size: 42px;
+            color: #D6A84F;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            letter-spacing: 1px;
+            color: #FFF7E8;
+        }
+
+        header p {
+            margin-top: 10px;
+            color: #FFF1D6;
+            line-height: 1.6;
+        }
+
+        .brand-tagline {
+            display: block;
+            margin-top: 12px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #D6A84F;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #D6A84F;
+            padding: 14px 8px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #4B2E5D;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 5px 10px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFF7E8;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 480px;
+
+            background:
+                linear-gradient(
+                    rgba(75, 46, 93, 0.45),
+                    rgba(75, 46, 93, 0.65)
+                ),
+                url("https://images.unsplash.com/photo-1578985545062-69928b1d9587");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 30px 20px;
+            color: #FFF7E8;
+        }
+
+        .hero h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-bottom: 18px;
+            color: #FFF1D6;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        /* BUTTONS */
+
+        .btn {
+            display: inline-block;
+            margin: 15px 6px 0;
+            background: #D6A84F;
+            color: #4B2E5D;
+            padding: 13px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #FFF1D6;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            scroll-margin-top: 75px;
+        }
+
+        section h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: #4B2E5D;
+        }
+
+        section > p {
+            max-width: 750px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
+        }
+
+        /* PRODUCT CARDS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 22px;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .product {
+            background: #FFFFFF;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(75, 46, 93, 0.12);
+            padding-bottom: 22px;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(75, 46, 93, 0.18);
+        }
+
+        .product img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin: 16px 10px;
+            color: #4B2E5D;
+            font-family: Georgia, serif;
+        }
+
+        .product p {
+            color: #6B4C7A;
+            line-height: 1.6;
+            padding: 0 12px;
+        }
+
+        .price {
+            color: #A47725 !important;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 12px;
+        }
+
+        /* ABOUT SECTION */
+
+        .about {
+            background: #F1EAF4;
+            line-height: 1.8;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* GALLERY SECTION */
+
+        .gallery {
+            background: #FFF7E8;
+        }
+
+        /* CUSTOM CAKE SECTION */
+
+        .custom-cakes {
+            background: #4B2E5D;
+            color: #FFF7E8;
+        }
+
+        .custom-cakes h2 {
+            color: #D6A84F;
+        }
+
+        .custom-cakes p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* REVIEWS SECTION */
+
+        .reviews {
+            background: #F1EAF4;
+        }
+
+        .review-note {
+            font-style: italic;
+            color: #6B4C7A;
+        }
+
+        /* CONTACT SECTION */
+
+        .contact {
+            background: #FFF7E8;
+            line-height: 2;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #4B2E5D;
+            color: #FFF7E8;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer h2 {
+            font-family: Georgia, serif;
+            margin-bottom: 12px;
+            color: #D6A84F;
+        }
+
+        footer p {
+            margin: 10px 0;
+            line-height: 1.6;
+            color: #FFF7E8;
+        }
+
+        footer .copyright {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #D6A84F;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media screen and (max-width: 600px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav {
+                padding: 8px 4px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 380px;
+                padding: 20px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 38px 15px;
+            }
+
+            section h2 {
+                font-size: 25px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product img {
+                height: 220px;
+            }
+
+            .btn {
+                padding: 12px 18px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="brand-mark">✿</div>
+
+        <h1>Naomi's Grace Oven</h1>
+
+        <p>Freshly Baked with Love, Made with Grace.</p>
+
+        <span class="brand-tagline">
+            CAKES • LOVE • HAPPINESS
+        </span>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero" id="home">
+
+        <h2>A Little Taste of Heaven</h2>
+
+        <p>
+            Delicious cakes, pastries and freshly baked treats,
+            made with love for every occasion.
+        </p>
+
+        <a href="#menu" class="btn">
+            Explore Our Menu
+        </a>
+
+        <a class="btn"
+           href="https://wa.me/254143135222?text=Hello%20Naomi%27s%20Grace%20Oven%2C%20I%20would%20like%20to%20place%20an%20order.">
+            Order Now on WhatsApp
+        </a>
+
+    </div>
+
+    <!-- MENU SECTION -->
+
+    <section id="menu">
+
+        <h2>Our Delicious Menu</h2>
+
+        <div class="products">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"
+                    alt="Passion birthday cake">
+
+                <h3>Passion Birthday Cake</h3>
+
+                <p>
+                    Delicious passion cake for your
+                    special celebrations.
+                </p>
+
+                <h3 class="price">KSh 2,500</h3>
+
+                <p>Per 1 kg</p>
+
+                <a class="btn"
+                   href="https://wa.me/254143135222?text=Hello%20Naomi%27s%20Grace%20Oven%2C%20I%20would%20like%20to%20order%20a%201kg%20Passion%20Birthday%20Cake%20for%20KSh%202500.">
+                    Order Now
+                </a>
+
+            </div>
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1535254973040-607b474cb50d"
+                    alt="Wedding cake">
+
+                <h3>Wedding Cakes</h3>
+
+                <p>
+                    Beautiful cakes made to make
+                    your special day memorable.
+                </p>
+
+                <h3 class="price">From KSh 2,500</h3>
+
+                <p>Per kg</p>
+
+                <a class="btn"
+                   href="https://wa.me/254143135222?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20ordering%20a%20wedding%20cake.">
+                    Order Now
+                </a>
+
+            </div>
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d"
+                    alt="Cupcakes">
+
+                <h3>Delicious Cupcakes</h3>
+
+                <p>
+                    Soft, sweet cupcakes perfect
+                    for sharing.
+                </p>
+
+                <h3 class="price">KSh 900</h3>
+
+                <p>6 pieces</p>
+
+                <a class="btn"
+                   href="https://wa.me/254143135222?text=Hello%2C%20I%20would%20like%20to%20order%206%20cupcakes%20for%20KSh%20900.">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY SECTION -->
+
+    <section id="gallery" class="gallery">
+
+        <h2>Our Cake Gallery</h2>
+
+        <p>
+            Explore some of our beautiful cake creations.
+        </p>
+
+        <div class="products">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d"
+                    alt="Birthday cake">
+
+                <h3>Birthday Creations</h3>
+
+                <p>
+                    Beautiful cakes for every celebration.
+                </p>
+
+            </div>
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519225421980-715cb0215aed"
+                    alt="Wedding celebration">
+
+                <h3>Wedding Cakes</h3>
+
+                <p>
+                    Elegant designs for your special day.
+                </p>
+
+            </div>
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d"
+                    alt="Cupcakes">
+
+                <h3>Cupcake Designs</h3>
+
+                <p>
+                    Sweet little treats made with love.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about" class="about">
+
+        <h2>Our Story</h2>
+
+        <p>
+            Welcome to Naomi's Grace Oven, where every treat
+            is prepared with passion, care and a little grace.
+
+            We believe every celebration deserves something
+            special. From beautiful birthday cakes to elegant
+            wedding creations and delicious pastries, we make
+            every occasion sweeter.
+        </p>
+
+    </section>
+
+    <!-- CUSTOM CAKES SECTION -->
+
+    <section class="custom-cakes">
+
+        <h2>More Cakes, More Choices!</h2>
+
+        <p>
+            Every celebration deserves a special cake.
+
+            Choose your preferred flavour, design, size and
+            style, and let us create something beautiful
+            just for you!
+        </p>
+
+        <a class="btn"
+           href="https://wa.me/254143135222?text=Hello%20Naomi%27s%20Grace%20Oven%2C%20I%20would%20like%20to%20inquire%20about%20a%20custom%20cake.">
+            Request a Custom Cake
+        </a>
+
+    </section>
+
+    <!-- REVIEWS SECTION -->
+
+    <section id="testimonials" class="reviews">
+
+        <h2>What Our Customers Say</h2>
+
+        <p class="review-note">
+            We look forward to sharing our customers'
+            experiences here. Check back soon!
+        </p>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact" id="contact">
+
+        <h2>Place Your Order</h2>
+
+        <p>
+            Have a special occasion or craving something sweet?
+        </p>
+
+        <p>
+            We'd love to hear from you!
+        </p>
+
+        <a class="btn"
+           href="https://wa.me/254143135222">
+            Order on WhatsApp
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>Naomi's Grace Oven</h2>
+
+        <p>
+            Freshly Baked with Love, Made with Grace.
+        </p>
+
+        <p>For orders and enquiries:</p>
+
+        <p>WhatsApp: +254 143 135 222</p>
+
+        <a class="btn"
+           href="https://wa.me/254143135222">
+            Contact Us on WhatsApp
+        </a>
+
+        <p class="copyright">
+            © 2026 Naomi's Grace Oven.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
